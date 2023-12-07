@@ -5,8 +5,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/flashbots/go-template/httpserver"
 	"github.com/flashbots/go-utils/logutils"
+	"go-template/httpserver"
 )
 
 var version = "dev" // is set during build process
