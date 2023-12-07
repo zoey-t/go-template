@@ -3,6 +3,10 @@ VERSION := $(shell git describe --tags --always --dirty="-dev")
 .PHONY: all
 all: clean build
 
+.PHONY: build
+build:
+	go build ./...
+
 .PHONY: v
 v:
 	@echo "Version: ${VERSION}"
