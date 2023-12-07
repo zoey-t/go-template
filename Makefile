@@ -1,11 +1,8 @@
 VERSION := $(shell git describe --tags --always --dirty="-dev")
 
 .PHONY: all
-all: clean build
-
+all: clean build-cli
 .PHONY: build
-build:
-	go build ./...
 
 .PHONY: v
 v:
