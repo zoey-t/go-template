@@ -9,11 +9,6 @@ Toolbox for new Go projects!
 * Linting with `gofmt`, `gofumpt`, `go vet`, `staticcheck` and `golangci-lint`
 * Logging setup using the Zap logger (with debug and json logging options)
 * [GitHub Workflows](.github/workflows/) for linting and testing, as well as releasing and publishing Docker images
-* Entry files for [CLI](/cmd/cli/main.go) and [HTTP server](/cmd/httpserver/main.go)
-* Webserver with graceful shutdown, implementing `livez`, `readyz` and draining API handlers
-* See also:
-  * Public project setup: https://github.com/flashbots/flashbots-repository-template
-  * Repository for common Go utilities: https://github.com/flashbots/go-utils
 
 Pick and choose whatever is useful to you! Don't feel the need to use everything, or even to follow this structure.
 
@@ -25,12 +20,6 @@ Pick and choose whatever is useful to you! Don't feel the need to use everything
 
 ```bash
 make build-cli
-```
-
-**Build HTTP server**
-
-```bash
-make build-httpserver
 ```
 
 **Install dev dependencies**
