@@ -54,4 +54,3 @@ func main() {
 	log.Error("error message (stacktrace added automatically)")
 	// log.Fatal("fatal message (stacktrace added automatically + causes the app to exit with non-zero status)")
 }
-

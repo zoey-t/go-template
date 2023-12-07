@@ -20,11 +20,6 @@ build-cli:
 	@mkdir ./build || true
 	go build -trimpath -ldflags "-X main.version=${VERSION}" -v -o ./build/cli cmd/cli/main.go
 
-.PHONY: build-httpserver
-build-httpserver:
-	@mkdir ./build || true
-	go build -trimpath -ldflags "-X main.version=${VERSION}" -v -o ./build/httpserver cmd/httpserver/main.go
-
 .PHONY: test
 test:
 	go test ./...
@@ -61,26 +56,11 @@ cover:
 	go tool cover -func /tmp/go-sim-lb.cover.tmp
 	unlink /tmp/go-sim-lb.cover.tmp
 
-.PHONY: cover-html
-cover-html:
-	go test -coverprofile=/tmp/go-sim-lb.cover.tmp ./...
-	go tool cover -html=/tmp/go-sim-lb.cover.tmp
-	unlink /tmp/go-sim-lb.cover.tmp
-
 .PHONY: docker-cli
 docker-cli:
 	DOCKER_BUILDKIT=1 docker build \
 		--platform linux/amd64 \
 		--build-arg VERSION=${VERSION} \
 		--file cli.dockerfile \
-		--tag your-project \
-	.
-
-.PHONY: docker-httpserver
-docker-httpserver:
-	DOCKER_BUILDKIT=1 docker build \
-		--platform linux/amd64 \
-		--build-arg VERSION=${VERSION} \
-		--file httpserver.dockerfile \
 		--tag your-project \
 	.
