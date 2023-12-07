@@ -41,6 +41,14 @@ go install honnef.co/go/tools/cmd/staticcheck@latest
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 go install github.com/daixiang0/gci@latest
 ```
+if it has errors like `No such file or directory` when running packages installed via `go install`
+1. open `~/.bash_profile` or `~/.zshrc` and edit it
+	```bash
+	code `~/.bash_profile`
+	# or
+	code `~/.zshrc`
+	```
+2. add `export PATH=$PATH:$(go env GOPATH)/bin` to the file
 
 **Lint, test, format**
 
@@ -49,3 +57,5 @@ make lint
 make test
 make fmt
 ```
+
+
